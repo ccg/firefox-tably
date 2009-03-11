@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="chrome://tably/skin/overlay.css" type="text/css"?>
+<!DOCTYPE overlay SYSTEM "chrome://tably/locale/tably.dtd">
+<overlay id="tably-overlay"
+         xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+  <script src="overlay.js"/>
+  <stringbundleset id="stringbundleset">
+    <stringbundle id="tably-strings" src="chrome://tably/locale/tably.properties"/>
+  </stringbundleset>
+
+  <menupopup id="menu_ToolsPopup">
+    <menuitem id="tably-hello" label="&tably.label;" 
+              oncommand="tably.onMenuItemCommand(event);"/>
+  </menupopup>
+</overlay>
