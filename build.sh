@@ -1,4 +1,9 @@
 #!/bin/bash
+#
+# Customized by ccg to deal with svn, git, and vim
+# 2009-03-11
+# I think this script is getting out of control...
+#
 # build.sh -- builds JAR and XPI files for mozilla extensions
 #   by Nickolay Ponomarev <asqueella@gmail.com>
 #   (original version based on Nathan Yergler's build script)
@@ -68,7 +73,7 @@ mkdir --parents --verbose $TMP_DIR/chrome
 JAR_FILE=$TMP_DIR/chrome/$APP_NAME.jar
 echo "Generating $JAR_FILE..."
 for CHROME_SUBDIR in $CHROME_PROVIDERS; do
-  find $CHROME_SUBDIR -path '*CVS*' -prune -o -type f -print | grep -v \~ >> files
+  find $CHROME_SUBDIR -path '*CVS*' -prune -o -path '*.git' -prune -o -path '*.svn' -prune -o -type f -print | fgrep -v \~ | grep -v '.*\.swp' >> files
 done
 
 zip -0 -r $JAR_FILE `cat files`
@@ -79,7 +84,7 @@ zip -0 -r $JAR_FILE `cat files`
 echo "Copying various files to $TMP_DIR folder..."
 for DIR in $ROOT_DIRS; do
   mkdir $TMP_DIR/$DIR
-  FILES="`find $DIR -path '*CVS*' -prune -o -type f -print | grep -v \~`"
+  FILES="$(find $DIR -path '*CVS*' -prune -o -path '*.git' -prune -o -path '*.svn' -prune -o -type f -print | fgrep -v \~ | grep -v '.*\.swp')"
   echo $FILES >> files
   cp --verbose --parents $FILES $TMP_DIR
 done
