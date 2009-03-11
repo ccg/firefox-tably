@@ -8,8 +8,16 @@
     <stringbundle id="tably-strings" src="chrome://tably/locale/tably.properties"/>
   </stringbundleset>
 
+<!--
   <menupopup id="menu_ToolsPopup">
     <menuitem id="tably-hello" label="&tably.label;" 
               oncommand="tably.onMenuItemCommand(event);"/>
   </menupopup>
+-->
+  <popup id="contentAreaContextMenu">
+    <menuseparator id="tably-context-sep" insertafter="context-sep-stop"/>
+    <menuitem id="tably-context" label="&tably.label;" accesskey="T"
+              insertafter="context-sep-stop"
+              oncommand="tably.onMenuItemCommand(event);"/>
+  </popup>
 </overlay>
