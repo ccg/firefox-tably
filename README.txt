@@ -1,6 +1,8 @@
-This add-on places a "Send tabs to tab.ly..." menu item under Firefox's
-Tools menu. If successful, it will open a new tab with a new tably of the
-set of open tabs in Firefox.
+This add-on places a "Send tabs to tab.ly..." menu item in Firefox's
+right-click context menu.
+
+If successful, it will open a new tab containing a new tably of all the
+open tabs in Firefox.
 
 -- Original readme.txt contents below --
 
