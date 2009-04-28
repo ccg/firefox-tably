@@ -1,3 +1,4 @@
 content	tably	content/
 locale	tably	en-US	locale/en-US/
-overlay	chrome://browser/content/browser.xul	chrome://tably/content/firefoxOverlay.xul
+skin	tably	classic/1.0	skin/
+overlay	chrome://browser/content/browser.xul	chrome://tably/content/tablyOverlay.xul

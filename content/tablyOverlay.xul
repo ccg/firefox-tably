@@ -17,6 +17,8 @@
   <popup id="contentAreaContextMenu">
     <menuseparator id="tably-context-sep" insertafter="context-sep-stop"/>
     <menuitem id="tably-context" label="&tably.label;" accesskey="T"
+              class="menuitem-iconic"
+              image="chrome://tably/skin/favico.png"
               insertafter="context-sep-stop"
               oncommand="tably.onMenuItemCommand(event);"/>
   </popup>
